@@ -1,0 +1,7 @@
+.cache/ 
+node_modules/
+build
+
+compose.yaml
+compose.*.yaml
+trusted-cas.pem

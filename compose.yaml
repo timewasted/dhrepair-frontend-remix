@@ -1,0 +1,10 @@
+services:
+  app:
+    image: ${IMAGES_PREFIX:-}app-remix
+    restart: unless-stopped
+    environment: {}
+    ports:
+      # Vite
+      - target: 5173
+        published: 5173
+        protocol: tcp
