@@ -12,7 +12,7 @@ services:
       # Uncomment the following line if the API endpoint uses an untrusted/self-signed certificate
       # NODE_EXTRA_CA_CERTS: /app/trusted-cas.pem
       API_ENDPOINT: https://api.doghouserepair.com/api/v1
-      PRODUCT_IMAGE_ENDPOINT: https://static.doghouserepair.com/images/products
+      IMAGE_ENDPOINT: https://static.doghouserepair.com/images
     extra_hosts:
       # Ensure that host.docker.internal is correctly defined on Linux
       - host.docker.internal:host-gateway

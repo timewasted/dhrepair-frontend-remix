@@ -13,8 +13,7 @@ import { RootContext } from "~/context/root-context";
 export async function loader() {
     return json({
         CONTEXT: {
-            PRODUCT_IMAGE_ENDPOINT: process.env.PRODUCT_IMAGE_ENDPOINT ?? '',
-            PRODUCT_THUMB_ENDPOINT: `${process.env.PRODUCT_IMAGE_ENDPOINT}/thumbnails`,
+            IMAGE_ENDPOINT: process.env.IMAGE_ENDPOINT ?? '',
         },
         ENV: {},
     });
@@ -33,8 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </head>
         <body className="antialiased text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-800">
             <RootContext.Provider value={{
-                IMAGE_ENDPOINT_FULL: data.CONTEXT.PRODUCT_IMAGE_ENDPOINT,
-                IMAGE_ENDPOINT_THUMB: data.CONTEXT.PRODUCT_THUMB_ENDPOINT,
+                IMAGE_ENDPOINT: data.CONTEXT.IMAGE_ENDPOINT,
             }}>
                 <Navbar links={[
                     { to: "/", label: "Home" },

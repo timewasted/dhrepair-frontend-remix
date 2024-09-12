@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { useImageContext } from "~/context/root-context";
 import { useState } from 'react'
 
 export function Navbar({
@@ -9,6 +10,7 @@ export function Navbar({
         label: string;
     }[];
 }) {
+    const imageEndpoint = useImageContext();
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -17,7 +19,7 @@ export function Navbar({
             <div className="container mx-auto flex justify-between items-center py-4 px-5">
                 {/* Site logo */}
                 <Link to={"/"} className="flex flex-shrink-0 title-font font-medium items-center text-gray-900 md:mb-0">
-                    <img src="https://static.doghouserepair.com/images/SiteLogoMin.png" width="246" height="75" alt="Site logo" />
+                    <img src={`${imageEndpoint}/SiteLogoMin.png`} width="246" height="75" alt="Site logo" />
                 </Link>
 
                 {/* Navbar */}
