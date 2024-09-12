@@ -7,7 +7,7 @@ import {
     ScrollRestoration, useLoaderData,
 } from "@remix-run/react";
 import "./tailwind.css";
-import { Navbar } from "~/components/navbar";
+import { SiteHeader } from "~/components/site-header";
 import { RootContext } from "~/context/root-context";
 
 export async function loader() {
@@ -34,12 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <RootContext.Provider value={{
                 IMAGE_ENDPOINT: data.CONTEXT.IMAGE_ENDPOINT,
             }}>
-                <Navbar links={[
-                    { to: "/", label: "Home" },
-                    { to: "/store/categories", label: "Categories" },
-                    { to: "/store/category/2588", label: "Rewaco" },
-                    { to: "/contact", label: "Contact" },
-                ]} />
+                <SiteHeader />
                 <section id={"mainContent"} className="max-w-screen-lg mx-auto my-2">
                     {children}
                 </section>
