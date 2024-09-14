@@ -1,0 +1,19 @@
+{
+    "importOrder": [
+        "^react$",
+        "",
+        "<TYPES>^(node:)",
+        "<TYPES>",
+        "<TYPES>^[.]",
+        "",
+        "<BUILTIN_MODULES>",
+        "",
+        "^@remix-",
+        "",
+        "<THIRD_PARTY_MODULES>",
+        "",
+        "^(?!.*[.]css$)[./].*$",
+        ".css$"
+    ],
+    "plugins": ["@ianvs/prettier-plugin-sort-imports"]
+}
